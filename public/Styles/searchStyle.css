@@ -1,0 +1,156 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img{
+    width: auto;
+    height: 200px;
+    /* max-height: 0px; */
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+li{
+    list-style: none;
+}
+
+body{
+    min-height: 600px;
+    height: 100vh;
+    background: rgba(20, 20, 20, 0.85);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+#form-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background-color: rgba(20, 20, 20, 0.6);
+}
+
+#search-item{
+    border: none;
+    outline: none;
+    border-radius: 100vh;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: rgb(100, 100, 100);
+    min-width: 300px;
+    width: 50%;
+    color: white;
+}
+
+#form-container button{
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.3em;
+    border: 1px solid black;
+    outline: none;
+    margin-left: 5px;
+}
+
+#form-container button:hover{
+    cursor: pointer;
+}
+#main-div{
+    padding: 10px 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    
+}
+
+.sub-div{
+    width: 45%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll;
+}
+
+.sub-div::-webkit-scrollbar{
+    display: none;
+}
+
+.card-item{
+    display: grid;
+    padding: 20px 0;
+    margin: 20px 0;
+    border: 1px solid black;
+    grid-template-rows: 30% 30% 30%;
+    grid-template-columns: 30% 30% 30%;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    min-width: 200px;
+    background-color: rgb(100, 100, 100);
+    font-size: 1.2em;
+    border-radius: 20px;
+}
+.card-image{
+    width: 175px;
+    grid-row: 1 /span 3;
+}
+
+.item-name{
+    grid-column: 2 /span 2;
+    grid-row: 1;
+    max-height: 75px;
+    font-size: 1.5rem;
+    text-align: center;
+    text-overflow: clip;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.item-name::-webkit-scrollbar{
+    display: none;
+}
+
+.price, .website{
+   color: gold;
+   font-weight: bold;
+   justify-self: center;
+}
+
+.product-link{
+    grid-column: 2 /span 2;
+    grid-row: 3;
+}
+.compare{
+    grid-row: 3;
+    grid-column: 2;
+    justify-self: center;
+    
+}
+
+.card-btn{
+    background-color: #00B2FF;
+    text-align: center;
+    padding: 10px 0;
+    width: 250px;
+    border-radius: 100vh;
+    margin: 10px 0;
+    justify-self: center;
+}
+
+.compare button{
+    color: inherit;
+    border: none;
+    outline: none;
+    font-size: inherit;
+}

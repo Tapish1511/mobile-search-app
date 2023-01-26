@@ -26,7 +26,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     color: white;
-    padding: 10px 50px;
+    padding: 0 50px;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -36,6 +36,7 @@ body{
     justify-content: space-between; 
     align-items: center; 
     font-size: 1.2em; 
+    padding: 10px 0;
 }
 .left-items{
     display: flex;
@@ -55,4 +56,45 @@ body{
 .right-items>ul{
     display: flex;
     justify-content: space-between;
+}
+
+#main-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.text-container{
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px 10px;
+    width: 300px;
+    margin: 15px 0;
+    border-radius: 20px;
+}
+.text-container h2, .text-container p{
+    padding: 20px 0;
+}
+.text-container p{
+    font-style: italic;
+}
+.form-contaier{
+    width: 325px;
+    padding: 15px 0;
+}
+.form-contaier button{
+    padding: 10px 20px;
+    display: block;
+    width: 100%;
+    font-size: 1.3em;
+    border-radius: 100vh;
+    color: white;
+    background-color: #00B2FF;
+    font-weight: bold;
+}
+
+.form-contaier button:hover{
+    cursor: pointer;
 }

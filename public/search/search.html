@@ -4,14 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Styles/searchStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Search Phone</title>
 </head>
 <body>
-    <form action="./" method="post">
-        <input type="text" name="query">
-        <button type="submit" id="submit-btn">submit</button>
+    <form action="./" method="post" id="form-container">
+        <input type="text" name="query" id="search-item" autocomplete="off">
+        <button type="submit" id="submit-btn"><i class="fa fa-search"></i></button>
     </form>
-    <div id="main-div"></div>
+    <div id="main-div">
+       
+
+        <div id="main-div-left" class="sub-div">
+            
+        </div>
+
+        <div id="main-div-right" class="sub-div">
+            
+        </div>
+    </div>
     <script type="text/javascript" src="../Scripts/main.js"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@ app.use(express.urlencoded({extended:true}));
 
 
 app.get('/', (req, res)=>{
-    res.render('index');
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 })
 
 // this get function will redirect to the search page.
