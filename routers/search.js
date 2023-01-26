@@ -2,7 +2,8 @@ const express = require('express');
 const path = require('path');
 const axios = require('axios');
 const cheerio = require('cheerio');
-const { readdirSync } = require('fs');
+const { features } = require('process');
+
 
 const router = express.Router();
 router.use(express.static(path.join(__dirname, 'public')));
@@ -14,21 +15,23 @@ router.get('/', (req, res)=>{
 })
 
 router.post('/', (req, res)=>{
-    console.log(req.body.query)
     let query = req.body.query;
-    getData(query, res);
+    router.get('/amazondata', (reqe, rese)=>{
+        getAmazonData(query, rese);
+    });
+    res.sendStatus(200);
     
 })
 
-async function getData(query, res){
-    
+async function getAmazonData(query, res){
+    const scrapData = [];
     axios.get(amazonUrl+query)
     .then((response)=>{
         const $ = cheerio.load(response.data);
         
-        const scrapData = [];
         
-        const row = $('.s-result-item').find('.sg-row');
+        
+        const row = $('.s-result-item').find('.a-section > .sg-row');
         // .each((i, element)=>{
         //     scrapData.push({
         //         img: $(ele)
@@ -38,14 +41,22 @@ async function getData(query, res){
 
         // });
         for(let i=0; i<row.length; i++){
+            let image = $(row[i]).find('.s-image').attr();
+            let price = $(row[i]).find('.a-price-whole').text();
+            let features = $(row[i]).find('.sg-col-inner h2').text();
+            let link = $(row[i]).find('.sg-col-inner h2 > a').attr();
+           
+            if(image != null && price != null && features != null && link != null)
+            
             scrapData.push({
-                img: $(row[i]).find('.s-image').toString(),
-                price: $(row[i]).find('.a-price-whole').text(),
-                features: $(row[i]).find('.a-size-medium, .a-color-base, .a-text-nromal').text()
+                img: image,
+                price: price,
+                features: features,
+                link: link,
+                web: 'amazon',
+                url: 'https://www.amazon.in'
             });
         }
-       
-        const jsonData = JSON.stringify(scrapData);
         res.json(scrapData);
     
     })

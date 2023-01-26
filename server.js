@@ -8,7 +8,7 @@ app.use(express.urlencoded({extended:true}));
 
 
 app.get('/', (req, res)=>{
-    res.render('index', {text:"world"});
+    res.render('index');
 })
 
 // this get function will redirect to the search page.
@@ -17,6 +17,8 @@ app.get('/', (req, res)=>{
 
 const searchRouter = require('./routers/search');
 app.use('/search', searchRouter);
+
+
 
 app.post('/', (req, res)=>{
     isvalid = true;
